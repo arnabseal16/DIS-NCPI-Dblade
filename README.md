@@ -15,6 +15,7 @@ Present Infrastructure Platform and it's segregations:
 
 
 ## Proposed HLD:
-![Screenshot](Architecture.pdf)
+<embed src = "Architecture.pdf" type = "application/pdf">
+![Screenshot](Architecture.png)
 
 
