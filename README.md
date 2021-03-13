@@ -16,7 +16,6 @@ Present Infrastructure Platform and it's segregations:
 
 ## Proposed HLD:
 ![Screenshot](Architecture.png)
-> Infrastructure HLD
 
 
 > **Region(s) 1...13:**
@@ -187,6 +186,7 @@ The usage of a logging tool allows us to fetch log entries (syslog/application l
 Once DHCP, DNS, Logging, Monitoring, Inventory are setup, we need to make sure they speak with eachother. To do the same, we are going to levarage homegrown scripts, monitoring alerts and logging metrics to update the Inventory and in turn reflect them in Dashboards
 
 > **Create Build Flow**
+![Screenshot](Build_And_Tagging_Architecture.png)
 * **Target**:
 
 
