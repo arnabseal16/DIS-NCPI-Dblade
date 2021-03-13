@@ -167,6 +167,11 @@ Logging and Monitoring are 2 vital components to understand and keep in check th
 The usage of a logging tool allows us to fetch log entries (syslog/application log/network log) from all the hosts, without us having to login to the nodes per se
 
 > **Set Up Logstash and ElasticSearch**
+
+
+![Screenshot](ELK.png)
+
+
 * **Target**:
     * Install Logstash on each of the nodes to aggregate syslog, application log, network log
     * Install ElasticSearch on 1 VM and Install Icinga on 1 VM in Regional Logging+Monitoring Master
@@ -183,7 +188,7 @@ The usage of a logging tool allows us to fetch log entries (syslog/application l
     * Setup Icinga to collect appropriate metrics, and generate alterts based on threshold
     * Test Monitoring and Alerting
 * **Resource**: 2x Linux Sysadmin
-* **Timeline**: 2 Spring (2x 10 days)
+* **Timeline**: 2 Sprint (2x 10 days)
 
 
 ## Tie Everything Down
@@ -191,8 +196,24 @@ The usage of a logging tool allows us to fetch log entries (syslog/application l
 Once DHCP, DNS, Logging, Monitoring, Inventory are setup, we need to make sure they speak with eachother. To do the same, we are going to levarage homegrown scripts, monitoring alerts and logging metrics to update the Inventory and in turn reflect them in Dashboards
 
 > **Create Build Flow**
+
+
 ![Screenshot](Build_And_Tagging_Architecture.png)
+
+
 * **Target**:
+    * Create Build Daemons, Alarm Daemons, Delete Daemons
+    * Setup respective Regional Jenkins Job to build C++ pojects using maven-plugin, and trigger remotely
+    * Add respective SSH Agents Regional Jenkins
+    * Make respective alarms in Icinga
+* **Resource**: 2x Linux Sysadmin, 2x Python Developer, 1x Site Reliability Engineer
+* **Timeline**: 4 Sprint (4x 10 days)
+
+> **Create Django Dashboard for Inventory, Build Rate, IOPs**
+* **Target**: Create Django Dashboards for visual representation of the Infrastructure and Build Cycle
+* **Requirements**: 1x Linux Sysadmin, 3x Python Developer
+* **Timeline**: 2 Sprint (2x 10 days)
+
 
 
 
