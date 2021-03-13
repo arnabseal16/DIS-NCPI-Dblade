@@ -183,6 +183,11 @@ The usage of a logging tool allows us to fetch log entries (syslog/application l
 * **Timeline**: 3 Sprint (3x 10 days)
 
 > **Set Up Icinga**
+
+
+![Screenshot](Icinga.png)
+
+
 * **Target**:
     * Install Icinga on all the nodes
     * Setup Icinga to collect appropriate metrics, and generate alterts based on threshold
