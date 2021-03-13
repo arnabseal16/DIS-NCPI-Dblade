@@ -70,6 +70,10 @@ This will entrail **7** benefits:
 
 Inventory is one of the **key** drivning factors in any organic IT Infrastructure, it serves as an address book and as an updated information store house for all the elements in the Infrastructure, which represents a platform similar to a CMDB.
 
+
+![Screenshot](Inventory.png)
+
+
 **Project Segregations for the Overhaul of Inventory System:**
 
 > **Install And Configure MongoDB**:
