@@ -4,14 +4,14 @@ Present Infrastructure Platform and it's segregations:
 
 
 - Active Regions of Operations/Datacenters : **13**
-- Server Class Segregations : **QA**, **Dev**, **Sim**, **DB**, **Prod Infra**, **Prod Trade**
+- Server Class Segregations : **QA**, **Dev**, **Sim**, **DB**, **Prod Infra**, **Prod PG**
 - Server Attributes : **Clustered Cross Host Dependent Applications/Services**, **Present IPs**, **Native LVM**, **Co-located**
 - Accessibility to Server Console (iLO/DRAC/Custom Console) : **iLO**,**DRAC**,**iKVM**
 - Present Monitoring and Reporting System : **Passive Monitoring**
-- Existence of **"any"** inventory system : Not Present, Currently maintained using **EXCEL Workbooks**
+- Inventory system : **MongoDB** based dynamic inventory - **Data Source** - **Cobber**
 - Repository in use at present (Self Hosted/Private Online Repository) : **Self Hosted**
-- Build Process bring followed now : local `make` & `build`
-- Any Present Visual Inventory Dashboards : Not Available
+- Build Process bring followed: Distributed **Event** **based** Jenkins Deployment
+- Any Present Visual Inventory Dashboards : Centralised **Kibana/Loggly**
 
 
 ## Proposed HLD:
@@ -21,7 +21,7 @@ Present Infrastructure Platform and it's segregations:
 > **Region(s) 1...13:**
 - **Server Stack** - Monitoring + Log aggregator
 - **Logging + Monitoring Master node** for respective Region
--** Infrastructure Server** Providing **DHCP**,**DNS**,**Cobbler** Services for respective Region
+- ** Infrastructure Server** Providing **DHCP**,**DNS**,**Cobbler** Services for respective Region
 - **Deployment Server** Providing **Deployment**, **Configuration Management** and **Replicaset** for **Inventory**
 
 > **Centralised Control Region**
@@ -33,7 +33,7 @@ Present Infrastructure Platform and it's segregations:
 ## Setup Centralised Control Region:
 
 The **Central Control Region** will be used a single point of contact for all Configuration Management, Fault Management, Performance Management, Version Control System and Deployment across all the regions.<br />
-This will entrail **7** benefits:
+This will entail **7** benefits:
 
 1. **Reduce Interaction with actual compute nodes**, thereby reducing human error
 2. Central, Indexed and Segregated **Configuration Management Data Source**
@@ -85,7 +85,7 @@ Inventory is one of the **key** driving factors in any organic IT Infrastructure
         * DB - main, cluster, deployment, baremetal, capacity, misc
         * Collections:
             * main.db - groups, ports, instance, ip, region_capacity, alarms 
-            * cluster.db - cluster_all, cluster_qa, cluster_dev, cluster_sim, cluster_DB, cluster_infra, cluster_trade  
+            * cluster.db - cluster_all, cluster_qa, cluster_dev, cluster_sim, cluster_DB, cluster_infra, pg  
             * deployment.db - build_queue, delete_queue, workers
             * baremetal.db - bricks, bricks_active, bricks_decommed
             * capacity.db - cluster_capacity, brick_capacity
