@@ -7,7 +7,7 @@ Present Infrastructure Platform and it's segregations:
 - Server Class Segregations : **QA**, **Dev**, **Sim**, **DB**, **Prod Infra**, **Prod PG**
 - Server Attributes : **Clustered Cross Host Dependent Applications/Services**, **Present IPs**, **Native LVM**, **Co-located**
 - Accessibility to Server Console (iLO/DRAC/Custom Console) : **iLO**,**DRAC**,**iKVM**
-- Present Monitoring and Reporting System : **Passive Monitoring**
+- Present Monitoring and Reporting System : **Icinga**
 - Inventory system : **MongoDB** based dynamic inventory - **Data Source** - **Cobber**
 - Repository in use at present (Self Hosted/Private Online Repository) : **Self Hosted**
 - Build Process bring followed: Distributed **Event** **based** Jenkins Deployment
